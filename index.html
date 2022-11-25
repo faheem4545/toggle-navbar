@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Toggle NavBar</title>
+    <style>
+      body {
+        background-color: rgba(118, 111, 240, 0.977);
+      }
+      .container img {
+        width: 50px;
+        height: 50px;
+        margin: 0 2.5rem;
+        cursor: pointer;
+      }
+
+      ul li {
+        list-style-type: none;
+
+        height: 5rem;
+        width: 5rem;
+        /* background-color: green;
+      } */
+      }
+      .navLinks {
+        margin-top: 3rem;
+        display: none;
+      }
+      ul li a {
+        text-decoration: none;
+        color: black;
+        padding: 1rem 2rem;
+        background-color: yellow;
+      }
+      ul li a:hover {
+        background-color: red;
+      }
+
+      #crosstoggle {
+        display: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav class="container">
+      <h1>CLICK ON THE TOGGLE BAR</h1>
+      <img
+        src="/three-horizontal-lines-outline-icon.svg"
+        alt="horizental lines"
+        id="toggle"
+      />
+      <img src="/close-line-icon.svg" alt="horizental lines" id="crosstoggle" />
+
+      <ul class="navLinks">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+
+    <script>
+      // toggle on click
+      const toggle = document.getElementById("toggle");
+      const crosstoggle = document.getElementById("crosstoggle");
+      const navLinks = document.querySelector(".navLinks");
+      toggle.addEventListener("click", () => {
+        navLinks.style.display = "block";
+        toggle.style.display = "none";
+        crosstoggle.style.display = "block";
+      });
+      crosstoggle.addEventListener("click", () => {
+        navLinks.style.display = "none";
+        toggle.style.display = "block";
+        crosstoggle.style.display = "none";
+      });
+    </script>
+  </body>
+</html>
